@@ -1,0 +1,9 @@
+env:
+- name: DEPLOY_NAMESPACE
+  value: uat
+pipelineConfig:
+  agent: {}
+  env:
+  - name: DEPLOY_NAMESPACE
+    value: uat
+  pipelines: {}
