@@ -1,9 +1,4 @@
 dependencies:
-- name: exposecontroller
-  version: 2.3.89
-  repository: http://chartmuseum.jenkins-x.io
-  alias: expose
-- name: exposecontroller
-  version: 2.3.89
-  repository: http://chartmuseum.jenkins-x.io
-  alias: cleanup
+- name: dmr-web
+  repository: http://jenkins-x-chartmuseum:8080
+  version: 

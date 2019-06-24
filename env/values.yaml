@@ -1,23 +1,19 @@
-PipelineSecrets: {}
-cleanup:
-  Annotations:
-    helm.sh/hook: pre-delete
-    helm.sh/hook-delete-policy: hook-succeeded
-  Args:
-  - --cleanup
-controllerbuild: {}
-expose:
-  Annotations:
-    helm.sh/hook: post-install,post-upgrade
-    helm.sh/hook-delete-policy: hook-succeeded
-  Args:
-  - --v
-  - 4
-  config:
-    domain: 35.232.119.138.nip.io
-    exposer: Ingress
-    http: "true"
-jenkins:
-  Servers:
-    Global: {}
-prow: {}
+dmr-web:
+  replicaCount: 2
+  tolerations:
+  - effect: NoSchedule
+    key: dmr-deployment-tier
+    operator: Equal
+    value: qa
+  nodeSelector:
+    cloud.google.com/gke-nodepool: qa-pool-beefier
+redis:
+  cluster:
+    slaveCount: 1
+  tolerations:
+  - effect: NoSchedule
+    key: dmr-deployment-tier
+    operator: Equal
+    value: qa
+  nodeSelector:
+    cloud.google.com/gke-nodepool: qa-pool-beefier

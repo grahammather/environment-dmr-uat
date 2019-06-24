@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-app-config
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+data:
+  COMMERCE_HOST: https://dmr-test-1-api.denvermattress-test.upstart.team
+  REDIS_URL: redis://{{ .Release.Namespace }}-redis-master.{{ .Release.Namespace }}.svc.cluster.local:6379
+  DEBUG: "server:*"
+  SITE_ROOT: "https://uat.dmr.upstart.team"
+  GTM_ID: "GTM-KD5567J"
+  RECAPTCHA_KEY: "6LeYNxgUAAAAACCJf24sS35GEhl1_RhM7Y9zf9fq"
