@@ -1,4 +1,4 @@
 dependencies:
 - name: dmr-web
   repository: http://jenkins-x-chartmuseum:8080
-  version: 1.9.158-dmr
+  version: 1.9.168-dmr
