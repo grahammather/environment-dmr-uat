@@ -1,4 +1,7 @@
 dependencies:
+- name: redis
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 10.2.0
 - name: dmr-web
   repository: http://jenkins-x-chartmuseum:8080
   version: 1.10.223-dmr

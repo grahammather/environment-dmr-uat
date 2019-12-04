@@ -1,19 +1,33 @@
+PipelineSecrets: {}
 dmr-web:
   replicaCount: 2
   tolerations:
   - effect: NoSchedule
     key: dmr-deployment-tier
     operator: Equal
-    value: qa
+    value: dmr-devint-qa
   nodeSelector:
-    cloud.google.com/gke-nodepool: qa-pool-beefier
+    cloud.google.com/gke-nodepool: dmr-devint-qa-pool
 redis:
   cluster:
     slaveCount: 1
-  tolerations:
-  - effect: NoSchedule
-    key: dmr-deployment-tier
-    operator: Equal
-    value: qa
-  nodeSelector:
-    cloud.google.com/gke-nodepool: qa-pool-beefier
+  master:
+    tolerations:
+    - effect: NoSchedule
+      key: dmr-deployment-tier
+      operator: Equal
+      value: dmr-devint-qa
+    nodeSelector:
+      cloud.google.com/gke-nodepool: dmr-devint-qa-pool
+  slave:
+    tolerations:
+    - effect: NoSchedule
+      key: dmr-deployment-tier
+      operator: Equal
+      value: dmr-devint-qa
+    nodeSelector:
+      cloud.google.com/gke-nodepool: dmr-devint-qa-pool
+jenkins:
+  Servers:
+    Global: {}
+prow: {}
