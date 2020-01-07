@@ -11,3 +11,4 @@ data:
   SITE_ROOT: "https://uat.dmr.upstart.team"
   GTM_ID: "GTM-KD5567J"
   RECAPTCHA_KEY: "6LeYNxgUAAAAACCJf24sS35GEhl1_RhM7Y9zf9fq"
+  UPSTART_SITE: "8d3ea3bc-f65b-4227-9fa6-6fae40e4575a"
