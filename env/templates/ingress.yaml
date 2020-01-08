@@ -28,5 +28,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: dmr-web
+          serviceName: dmr-web-maintenance
           servicePort: 80
